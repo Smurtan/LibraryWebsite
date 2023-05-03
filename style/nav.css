@@ -160,6 +160,7 @@ A {
         width: 30px;
         height: 2px;
         background-color: #FF8224;
+        transition: all ease .3s;
     }
     
     .nav__btn.nav__btn--active :first-child {

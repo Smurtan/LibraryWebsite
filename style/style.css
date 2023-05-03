@@ -96,6 +96,14 @@ BODY {
     padding: 15px 25px;
 }
 
+.system-information {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 10px;
+}
+
 @media (max-width: 960px) {
     .main__aside {
         max-width: 230px;
