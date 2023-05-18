@@ -6,8 +6,6 @@
     color: #020202;
 }
 
-
-
 .books__wrapper {
     margin: 15px 0 35px;
     display: grid;
@@ -26,6 +24,7 @@
 
 .book__img {
     max-width: 190px;
+    border-radius: 5px;
 }
 
 .book__title {
