@@ -1,0 +1,123 @@
+.new_products {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 41px;
+    color: #020202;
+}
+
+
+
+.books__wrapper {
+    margin: 15px 0 35px;
+    display: grid;
+    grid-template-columns: repeat(3, 190px);
+    grid-row-gap: 37px;
+    justify-content: space-between;
+}
+
+.book__item {
+    max-width: 190px;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.book__img {
+    max-width: 190px;
+}
+
+.book__title {
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.book__author {
+    font-weight: 300;
+}
+
+.book__rating {
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.rating__star {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+}
+
+.rating__rating {
+    margin-right: 6px;
+    color: #FF8224;
+}
+
+.rating__count {
+    color: #454545;
+    font-weight: 300;
+}
+
+/*======================================================================*/
+
+@media (max-width: 1110px) {
+    .books__wrapper {
+        grid-template-columns: repeat(2, 190px);
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 1040px) {
+    .books__wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 880px) {
+    .books__wrapper {
+        grid-template-columns: repeat(3, 190px);
+    }
+}
+
+@media (max-width: 820px) {
+    .books__wrapper {
+        grid-template-columns: repeat(2, 190px);
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 750px) {
+    .books__wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 690px) {
+    .books__wrapper {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .books__wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 460px) {
+    .books__wrapper {
+        grid-template-columns: repeat(1, 190px);
+        justify-content: center;
+    }
+}
