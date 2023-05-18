@@ -9,9 +9,15 @@ $(function() {
     let infoContainer = $('#info');
     $('[data-role="nav"]').on('click', (e) => {
         e.preventDefault();
-        $('.wrapper__nav-list').toggleClass('wrapper__nav-list--active');
-        $("[data-role='burger-btn']").toggleClass('nav__btn--active');
-        $.post(e.target.href,
+        $('.wrapper__nav-list').removeClass('wrapper__nav-list--active');
+        $("[data-role='burger-btn']").removeClass('nav__btn--active');
+
+        let link = e.target;
+        while (link.tagName !== 'A') {
+            link = link.parentElement;
+        }
+
+        $.post(link.href,
             function (data) {
                 if (!data) {
                     infoContainer.html(`<H3 class="system-information">Файл "${e.target.textContent}" находится в разработке`);
@@ -20,5 +26,7 @@ $(function() {
                 }
             }
         );
-    })
+    });
+
+    $('#first-page').trigger('click');
 })
