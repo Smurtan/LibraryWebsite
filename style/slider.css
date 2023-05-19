@@ -1,11 +1,13 @@
 .slider {
     max-width: 750px;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .slide__viewer {
     position: relative;
     overflow: hidden;
-    height: 430px;
+    height: 400px;
 }
 
 .slide__group {
@@ -35,11 +37,40 @@
     border: none;
     background: none;
     color: #000;
-    font-size: 200%;
+    font-size: 50px;
     line-height: 0.5em;
 }
 
 .slider__btn.active, .slider__btn:hover {
     color: #FF8224;
     cursor: pointer;
+}
+
+/*===============================================*/
+
+@media (max-width: 1110px) {
+    .slider {
+        grid-column-end: 3;
+    }
+    .slide__viewer {
+        height: 300px;
+    }
+}
+
+@media (max-width: 880px) {
+    .slider {
+        grid-column-end: 4;
+    }
+}
+
+@media (max-width: 820px) {
+    .slider {
+        grid-column-end: 3;
+    }
+}
+
+@media (max-width: 460px) {
+    .slider {
+        grid-column-end: 2;
+    }
 }

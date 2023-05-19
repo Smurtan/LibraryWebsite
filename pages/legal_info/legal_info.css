@@ -1,0 +1,46 @@
+.legal__title {
+    color: #020202;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 20px;
+}
+
+.legal__content A {
+    color: #3D1EB5;
+}
+
+.legal__content,
+.legal__item-text,
+.legal__item-title {
+    color: #020202;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.legal__item-title {
+    font-weight: 400;
+    margin-top: 3px;
+}
+
+.legal__item-text {
+    font-weight: 300;
+}
+
+/*=======================================================================*/
+
+@media (max-width: 830px) {
+    .legal__title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .legal__content,
+    .legal__item-text,
+    .legal__item-title {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
