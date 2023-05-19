@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<HTML lang="en">
+<!doctype html>
+<html lang="ru">
+
 <HEAD>
-    <META charset="UTF-8"/>
-    <META http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <META name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <LINK rel="preconnect" href="https://fonts.googleapis.com"/>
-    <LINK rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <LINK
-            href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700;500;300&family=Roboto+Condensed:wght@300;700&display=swap"
-            rel="stylesheet"/>
+    <META charset="UTF-8">
+    <META http-equiv="X-UA-Compatible" content="IE=edge">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK rel="preconnect" href="https://fonts.googleapis.com">
+    <LINK rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <LINK href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700;500;300&family=Roboto+Condensed:wght@300;700&display=swap"
+          rel="stylesheet">
     <TITLE>Библиотека</TITLE>
-    <LINK rel="stylesheet" href="./style/reset.css"/>
-    <LINK rel="stylesheet" href="./style/style.css"/>
-    <LINK rel="stylesheet" href="./style/nav.css"/>
+    <LINK rel="stylesheet" href="./style/reset.css">
+    <LINK rel="stylesheet" href="./style/style.css">
+    <LINK rel="stylesheet" href="./style/nav.css">
+    <LINK rel="stylesheet" href="./style/form.css">
+    <LINK rel="stylesheet" href="./style/slider.css">
 </HEAD>
+
 <BODY>
 <HEADER class="header">
     <DIV class="container">
@@ -21,7 +24,7 @@
             <A class="header__title" href="#">Библиотека</A>
             <DIV class="header__profile">
                 <!-- <A class="header__profile-btn" href="#">Войти</A> -->
-                <A class="header__profile-logo" href="./pages/profile.html" data-role="nav">
+                <A class="header__profile-logo" href="pages/profile/profile.html" data-role="nav">
                     <SVG width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <CIRCLE cx="30.5" cy="30.5" r="29.5" fill="white" stroke="#FF8224" stroke-width="2.5"/>
                         <PATH
@@ -81,14 +84,14 @@
                             </A>
                         </LI>
                         <LI class="nav__list-item">
-                            <A class="nav__list-link" href="./pages/legal_information.html" data-role="nav">
+                            <A class="nav__list-link" href="pages/legal_info/legal_info.html" data-role="nav">
                                 Юридическая информация
                             </A>
                         </LI>
                     </UL>
                 </LI>
                 <LI class="wrapper__nav-item">
-                    <A class="wrapper__nav-link" href="./pages/technical_support.html" data-role="nav">
+                    <A class="wrapper__nav-link" href="pages/tech_support/tech_support.html" data-role="nav">
                         Техническая поддержка
                     </A>
                 </LI>
@@ -141,7 +144,7 @@
             </NAV>
             <DIV class="search__wrapper">
                 <FORM class="search" action="#" method="get">
-                    <INPUT type="text" class="search__text" placeholder="Поиск...">
+                    <INPUT type="search" class="search__text" placeholder="Поиск...">
                     <BUTTON type="submit" class="search__btn">Найти</BUTTON>
                 </FORM>
             </DIV>
@@ -156,11 +159,98 @@
 <FOOTER class="footer">
     <DIV class="container">
         <DIV class="footer__wrapper">
-            &copy Все права защищены, 2023 год.
+            <div class="footer__content">
+                <A class="footer__connection" data-role="feedback-open">Обратная связь</A>
+                <div class="content__item">
+                    <h2 class="footer__title">Контакты:</h2>
+                    <A class="footer__link"
+                       href="mailto:smirn.005vychislavoo@gmail.com">smirn.005vychislavoo@gmail.com</A>
+                    <A class="footer__link" href="tel:89212566258">+7 (921) 256-62-58</A>
+                </div>
+                <div class="content__item">
+                    <h2 class="footer__title">Соцсети:</h2>
+                    <div class="social__wrapper">
+                        <A class="footer__link social__link" href="https://vk.com/vycheslavs">
+                            <svg width="24" height="24" viewBox="0 0 21 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="6" width="17" height="13" fill="white"/>
+                                <path d="M1.47609 2.97609C0 4.45228 0 6.82837 0 11.58V12.42C0 17.1717 0 19.5478 1.47609 21.0239C2.95228 22.5 5.32837 22.5 10.08 22.5H10.92C15.6717 22.5 18.0478 22.5 19.5239 21.0239C21 19.5478 21 17.1717 21 12.42V11.58C21 6.82833 21 4.45223 19.5239 2.97609C18.0478 1.5 15.6717 1.5 10.92 1.5H10.08C5.32833 1.5 2.95223 1.5 1.47609 2.97609ZM3.54375 7.88756H5.94127C6.02002 11.895 7.78748 13.5925 9.1875 13.9425V7.88752H11.445V11.3438C12.8275 11.195 14.28 9.62002 14.77 7.88752H17.0275C16.8428 8.78602 16.4747 9.63676 15.9463 10.3865C15.4178 11.1363 14.7403 11.769 13.9562 12.245C14.8317 12.6796 15.605 13.2952 16.2249 14.0508C16.8449 14.8065 17.2974 15.6852 17.5525 16.6288H15.0675C14.8385 15.8092 14.3726 15.0755 13.7281 14.5197C13.0836 13.964 12.2894 13.611 11.445 13.505V16.6288H11.1737C6.38752 16.6288 3.65752 13.3475 3.54375 7.88752V7.88756Z"
+                                      fill="#0054F7"/>
+                            </svg>
+
+                        </A>
+                        <A class="footer__link social__link" href="https://t.me/smurtan">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_24_227)">
+                                    <path d="M12 0C8.81812 0 5.76375 1.26506 3.51562 3.51469C1.26518 5.76521 0.000623381 8.81734 0 12C0 15.1813 1.26562 18.2357 3.51562 20.4853C5.76375 22.7349 8.81812 24 12 24C15.1819 24 18.2362 22.7349 20.4844 20.4853C22.7344 18.2357 24 15.1813 24 12C24 8.81869 22.7344 5.76431 20.4844 3.51469C18.2362 1.26506 15.1819 0 12 0Z"
+                                          fill="url(#paint0_linear_24_227)"/>
+                                    <path d="M5.43184 11.8733C8.93059 10.3493 11.2631 9.34448 12.4293 8.85904C15.7631 7.47285 16.455 7.2321 16.9068 7.22395C17.0062 7.22235 17.2275 7.24692 17.3718 7.36364C17.4918 7.46207 17.5256 7.5952 17.5425 7.68867C17.5575 7.78204 17.5781 7.99485 17.5612 8.16098C17.3812 10.0585 16.5993 14.6631 16.2018 16.7884C16.035 17.6877 15.7031 17.9892 15.3825 18.0186C14.685 18.0827 14.1562 17.5581 13.4812 17.1158C12.4256 16.4234 11.8293 15.9925 10.8037 15.3169C9.61872 14.5362 10.3875 14.107 11.0625 13.4057C11.2387 13.2222 14.31 10.4294 14.3681 10.176C14.3756 10.1444 14.3831 10.0262 14.3118 9.96398C14.2425 9.90154 14.1393 9.92292 14.0643 9.93979C13.9575 9.96379 12.2718 11.079 9.00184 13.2854C8.52372 13.6142 8.09059 13.7745 7.70059 13.7661C7.27309 13.7569 6.44809 13.5239 5.83497 13.3247C5.08497 13.0804 4.48684 12.9512 4.53934 12.5363C4.56559 12.3203 4.86372 12.0992 5.43184 11.8733Z"
+                                          fill="white"/>
+                                </g>
+                                <defs>
+                                    <linearGradient id="paint0_linear_24_227" x1="1200" y1="0" x2="1200" y2="2400"
+                                                    gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#2AABEE"/>
+                                        <stop offset="1" stop-color="#229ED9"/>
+                                    </linearGradient>
+                                    <clipPath id="clip0_24_227">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </A>
+                        <A class="footer__link social__link" href="#">
+                            <svg width="24" height="24" viewBox="0 0 21 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="3" width="17" height="18" fill="white"/>
+                                <path d="M8.63437 8.30156C8.63437 7.26563 9.47344 6.42656 10.5 6.42656C11.5266 6.42656 12.3656 7.26563 12.3656 8.30156C12.3656 9.33281 11.5266 10.1672 10.5 10.1672C9.47344 10.1672 8.63437 9.32813 8.63437 8.30156ZM21 3.75V20.25C21 21.4922 19.9922 22.5 18.75 22.5H2.25C1.00781 22.5 0 21.4922 0 20.25V3.75C0 2.50781 1.00781 1.5 2.25 1.5H18.75C19.9922 1.5 21 2.50781 21 3.75ZM6.69844 8.30156C6.69844 10.3922 8.40469 12.0938 10.5 12.0938C12.5953 12.0938 14.3016 10.3969 14.3016 8.30156C14.3016 6.20156 12.5953 4.5 10.5 4.5C8.40469 4.5 6.69844 6.19688 6.69844 8.30156ZM14.8781 12.5531C14.6625 12.1266 14.0672 11.7656 13.2797 12.3844C13.2797 12.3844 12.2156 13.2281 10.5 13.2281C8.78438 13.2281 7.72031 12.3844 7.72031 12.3844C6.93281 11.7656 6.3375 12.1266 6.12188 12.5531C5.75156 13.3078 6.17344 13.6641 7.125 14.2875C7.93594 14.8078 9.05625 15 9.77813 15.075L9.17344 15.6797C8.32031 16.5234 7.50938 17.3438 6.9375 17.9156C6.1125 18.7406 7.43906 20.0625 8.26875 19.2562L10.5047 17.0109C11.3578 17.8641 12.1781 18.6844 12.7406 19.2562C13.5656 20.0625 14.8969 18.7547 14.0812 17.9156L11.8453 15.6797L11.2359 15.075C11.9625 15 13.0687 14.7984 13.8703 14.2875C14.8266 13.6641 15.2437 13.3031 14.8781 12.5531Z"
+                                      fill="#FF9800"/>
+                            </svg>
+                        </A>
+                    </div>
+                </div>
+                <div class="content__item">
+                    <h2 class="footer__title">Адрес:</h2>
+                    <A class="footer__link"
+                       href="https://yandex.ru/maps/213/moscow/house/bakuninskaya_ulitsa_1_3/Z04YcABoQEADQFtvfXt2cnlrZQ==/?ll=37.678954%2C55.773580&z=16.75">Бакунинская
+                        ул., 1-3, Москва, 105005</A>
+                </div>
+            </div>
+            <P class="footer__rights">
+                &copy Все права защищены, 2023 год.
+            </P>
         </DIV>
     </DIV>
 </FOOTER>
+
+<dialog class="dialog__feedback" data-role="dialog-feedback">
+    <section class="feedback__header">
+        <h3 class="feedback__title">Обратная связь</h3>
+        <div class="feedback__cancel" data-role="feedback-cancel">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.82397 0.632195L8.99997 6.8082L15.144 0.664195C15.2797 0.519743 15.4432 0.404187 15.6246 0.324455C15.8061 0.244723 16.0018 0.202458 16.2 0.200195C16.6243 0.200195 17.0313 0.368766 17.3313 0.668824C17.6314 0.968883 17.8 1.37585 17.8 1.8002C17.8037 1.99636 17.7673 2.19121 17.693 2.37281C17.6187 2.5544 17.5081 2.71889 17.368 2.8562L11.144 9.0002L17.368 15.2242C17.6317 15.4822 17.7863 15.8315 17.8 16.2002C17.8 16.6245 17.6314 17.0315 17.3313 17.3316C17.0313 17.6316 16.6243 17.8002 16.2 17.8002C15.9961 17.8087 15.7926 17.7746 15.6026 17.7003C15.4125 17.6259 15.24 17.5128 15.096 17.3682L8.99997 11.1922L2.83997 17.3522C2.70478 17.4918 2.54327 17.6033 2.36477 17.6802C2.18627 17.7571 1.99431 17.7979 1.79997 17.8002C1.37562 17.8002 0.968655 17.6316 0.668596 17.3316C0.368538 17.0315 0.199967 16.6245 0.199967 16.2002C0.196237 16.004 0.232632 15.8092 0.306919 15.6276C0.381206 15.446 0.491819 15.2815 0.631967 15.1442L6.85597 9.0002L0.631967 2.7762C0.368263 2.51821 0.213631 2.16885 0.199967 1.8002C0.199967 1.37585 0.368538 0.968883 0.668596 0.668824C0.968655 0.368766 1.37562 0.200195 1.79997 0.200195C2.18397 0.204995 2.55197 0.360195 2.82397 0.632195Z"
+                      fill="#EAEAEA"/>
+            </svg>
+        </div>
+    </section>
+    <section class="feedback__content">
+        <p class="feedback__text">
+            Оставьте свои контакты и мы свяжемся с вами
+        </p>
+        <form class="form__wrapper feedback__form" action="#" method="dialog">
+            <input class="form__input feedback__input" type="text" name="name" id="feedback-name" placeholder="Ваше имя">
+            <input class="form__input feedback__input" type="email" name="email" id="feedback-email" placeholder="Ваша эл. почта">
+            <input class="form__input feedback__input" type="tel" name="tel" id="feedback-tel" placeholder="Ваш номер тел.">
+            <textarea class="form__textarea feedback__textarea" name="text" id="feedback-text" placeholder="Сообщение"></textarea>
+            <button class="form__btn feedback__sender" type="submit">Отправить</button>
+        </form>
+    </section>
+</dialog>
+
 <SCRIPT src="./script/jquery-3.6.4.min.js"></SCRIPT>
 <SCRIPT src="./script/script.js"></SCRIPT>
 </BODY>
-</HTML>
+
+</html>

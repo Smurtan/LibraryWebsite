@@ -1,0 +1,84 @@
+.form__wrapper {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    padding: 9px 12px;
+    margin-top: 15px;
+    background: none;
+    border-radius: 3px;
+    border: 1px solid #020202;
+}
+
+.form__textarea {
+    max-height: 125px;
+    height: 125px;
+    resize: none;
+}
+
+.form__input::placeholder {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    opacity: .6;
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: #FF8224;
+}
+
+.form__textarea::placeholder {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    opacity: .6;
+}
+
+.form__textarea:focus {
+    outline: none;
+    border-color: #FF8224;
+}
+
+.form__btn {
+    margin-top: 15px;
+    padding: 8px 28px;
+    background-color: #2BB343;
+    color: #FFF;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form__text-system {
+    margin-top: 7px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.form__text-system A {
+    color: #3D1EB5;
+}
+
+.input__password {
+    position: relative;
+    display: block;
+}
+
+.password__eye {
+    position: absolute;
+    right: 9px;
+    top: 25px;
+    opacity: .4;
+    cursor: pointer;
+}
+
+.password__eye.password__eye--active {
+    opacity: 1;
+}
