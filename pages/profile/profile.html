@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="./pages/profile/profile.css">
+<div class="sign_in__wrapper" data-role="in">
+    <h2 class="profile__title">Вход</h2>
+    <form class="form__wrapper" action="#" method="post" data-role="sign-in-form">
+        <input class="form__input" type="email" name="email" id="in-email" placeholder="Эл. почта">
+        <label class="input__password" for="in-password">
+            <input class="form__input" type="password" name="password" id="in-password" placeholder="Пароль">
+            <span class="password__eye" data-role="show-password"><svg width="15" height="11" viewBox="0 0 15 11" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 3.625C7.00272 3.625 6.52581 3.82254 6.17417 4.17417C5.82254 4.52581 5.625 5.00272 5.625 5.5C5.625 5.99728 5.82254 6.47419 6.17417 6.82583C6.52581 7.17746 7.00272 7.375 7.5 7.375C7.99728 7.375 8.47419 7.17746 8.82583 6.82583C9.17746 6.47419 9.375 5.99728 9.375 5.5C9.375 5.00272 9.17746 4.52581 8.82583 4.17417C8.47419 3.82254 7.99728 3.625 7.5 3.625ZM7.5 8.625C6.6712 8.625 5.87634 8.29576 5.29029 7.70971C4.70424 7.12366 4.375 6.3288 4.375 5.5C4.375 4.6712 4.70424 3.87634 5.29029 3.29029C5.87634 2.70424 6.6712 2.375 7.5 2.375C8.3288 2.375 9.12366 2.70424 9.70971 3.29029C10.2958 3.87634 10.625 4.6712 10.625 5.5C10.625 6.3288 10.2958 7.12366 9.70971 7.70971C9.12366 8.29576 8.3288 8.625 7.5 8.625ZM7.5 0.8125C4.375 0.8125 1.70625 2.75625 0.625 5.5C1.70625 8.24375 4.375 10.1875 7.5 10.1875C10.625 10.1875 13.2937 8.24375 14.375 5.5C13.2937 2.75625 10.625 0.8125 7.5 0.8125Z"
+                      fill="black"/>
+                </svg>
+            </span>
+        </label>
+        <button class="form__btn" type="submit">Войти</button>
+        <p class="form__text-system">
+            Впервые? <a href="up" class="in__link-up" data-parent="in" data-role="sign-link">Зарегистрироваться</a>
+        </p>
+    </form>
+</div>
+
+<div class="sign_up__wrapper hidden" data-role="up">
+    <h2 class="profile__title">Регистрация</h2>
+    <form class="form__wrapper" action="#" method="post">
+        <input class="form__input" type="text" name="surname" id="up-surname" placeholder="Фамилия">
+        <input class="form__input" type="text" name="name" id="up-name" placeholder="Имя">
+        <input class="form__input" type="date" name="date" id="up-date" placeholder="Дата рождения">
+        <input class="form__input" type="email" name="email" id="up-email" placeholder="Эл. почта">
+        <label class="input__password" for="up-password">
+            <input class="form__input" type="password" name="password" id="up-password" placeholder="Пароль">
+            <span class="password__eye" data-role="show-password"><svg width="15" height="11" viewBox="0 0 15 11" fill="none"
+                                                                       xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 3.625C7.00272 3.625 6.52581 3.82254 6.17417 4.17417C5.82254 4.52581 5.625 5.00272 5.625 5.5C5.625 5.99728 5.82254 6.47419 6.17417 6.82583C6.52581 7.17746 7.00272 7.375 7.5 7.375C7.99728 7.375 8.47419 7.17746 8.82583 6.82583C9.17746 6.47419 9.375 5.99728 9.375 5.5C9.375 5.00272 9.17746 4.52581 8.82583 4.17417C8.47419 3.82254 7.99728 3.625 7.5 3.625ZM7.5 8.625C6.6712 8.625 5.87634 8.29576 5.29029 7.70971C4.70424 7.12366 4.375 6.3288 4.375 5.5C4.375 4.6712 4.70424 3.87634 5.29029 3.29029C5.87634 2.70424 6.6712 2.375 7.5 2.375C8.3288 2.375 9.12366 2.70424 9.70971 3.29029C10.2958 3.87634 10.625 4.6712 10.625 5.5C10.625 6.3288 10.2958 7.12366 9.70971 7.70971C9.12366 8.29576 8.3288 8.625 7.5 8.625ZM7.5 0.8125C4.375 0.8125 1.70625 2.75625 0.625 5.5C1.70625 8.24375 4.375 10.1875 7.5 10.1875C10.625 10.1875 13.2937 8.24375 14.375 5.5C13.2937 2.75625 10.625 0.8125 7.5 0.8125Z"
+                      fill="black"/>
+                </svg>
+            </span>
+        </label>
+        <label class="input__password" for="up-password-2">
+            <input class="form__input" type="password" name="password-2" id="up-password-2" placeholder="Повторите пароль">
+            <span class="password__eye" data-role="show-password"><svg width="15" height="11" viewBox="0 0 15 11" fill="none"
+                                                                       xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 3.625C7.00272 3.625 6.52581 3.82254 6.17417 4.17417C5.82254 4.52581 5.625 5.00272 5.625 5.5C5.625 5.99728 5.82254 6.47419 6.17417 6.82583C6.52581 7.17746 7.00272 7.375 7.5 7.375C7.99728 7.375 8.47419 7.17746 8.82583 6.82583C9.17746 6.47419 9.375 5.99728 9.375 5.5C9.375 5.00272 9.17746 4.52581 8.82583 4.17417C8.47419 3.82254 7.99728 3.625 7.5 3.625ZM7.5 8.625C6.6712 8.625 5.87634 8.29576 5.29029 7.70971C4.70424 7.12366 4.375 6.3288 4.375 5.5C4.375 4.6712 4.70424 3.87634 5.29029 3.29029C5.87634 2.70424 6.6712 2.375 7.5 2.375C8.3288 2.375 9.12366 2.70424 9.70971 3.29029C10.2958 3.87634 10.625 4.6712 10.625 5.5C10.625 6.3288 10.2958 7.12366 9.70971 7.70971C9.12366 8.29576 8.3288 8.625 7.5 8.625ZM7.5 0.8125C4.375 0.8125 1.70625 2.75625 0.625 5.5C1.70625 8.24375 4.375 10.1875 7.5 10.1875C10.625 10.1875 13.2937 8.24375 14.375 5.5C13.2937 2.75625 10.625 0.8125 7.5 0.8125Z"
+                      fill="black"/>
+                </svg>
+            </span>
+        </label>
+        <button class="form__btn" type="submit">Зарегистрироваться</button>
+        <p class="form__text-system">
+            Уже зарегистрированы? <a href="in" class="in__link-up" data-parent="up" data-role="sign-link">Войти</a>
+        </p>
+    </form>
+</div>
+
+<script src="./pages/profile/profile.js"></script>

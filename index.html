@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<HTML lang="en">
+<!doctype html>
+<html lang="ru">
 
 <HEAD>
     <META charset="UTF-8">
@@ -13,6 +13,8 @@
     <LINK rel="stylesheet" href="./style/reset.css">
     <LINK rel="stylesheet" href="./style/style.css">
     <LINK rel="stylesheet" href="./style/nav.css">
+    <LINK rel="stylesheet" href="./style/form.css">
+    <LINK rel="stylesheet" href="./style/slider.css">
 </HEAD>
 
 <BODY>
@@ -22,7 +24,7 @@
             <A class="header__title" href="#">Библиотека</A>
             <DIV class="header__profile">
                 <!-- <A class="header__profile-btn" href="#">Войти</A> -->
-                <A class="header__profile-logo" href="./pages/profile.html" data-role="nav">
+                <A class="header__profile-logo" href="pages/profile/profile.html" data-role="nav">
                     <SVG width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <CIRCLE cx="30.5" cy="30.5" r="29.5" fill="white" stroke="#FF8224" stroke-width="2.5"/>
                         <PATH
@@ -89,7 +91,7 @@
                     </UL>
                 </LI>
                 <LI class="wrapper__nav-item">
-                    <A class="wrapper__nav-link" href="./pages/technical_support.html" data-role="nav">
+                    <A class="wrapper__nav-link" href="pages/tech_support/tech_support.html" data-role="nav">
                         Техническая поддержка
                     </A>
                 </LI>
@@ -142,7 +144,7 @@
             </NAV>
             <DIV class="search__wrapper">
                 <FORM class="search" action="#" method="get">
-                    <INPUT type="text" class="search__text" placeholder="Поиск...">
+                    <INPUT type="search" class="search__text" placeholder="Поиск...">
                     <BUTTON type="submit" class="search__btn">Найти</BUTTON>
                 </FORM>
             </DIV>
@@ -158,7 +160,7 @@
     <DIV class="container">
         <DIV class="footer__wrapper">
             <div class="footer__content">
-                <A class="footer__connection">Обратная связь</A>
+                <A class="footer__connection" data-role="feedback-open">Обратная связь</A>
                 <div class="content__item">
                     <h2 class="footer__title">Контакты:</h2>
                     <A class="footer__link"
@@ -221,8 +223,34 @@
         </DIV>
     </DIV>
 </FOOTER>
+
+<dialog class="dialog__feedback" data-role="dialog-feedback">
+    <section class="feedback__header">
+        <h3 class="feedback__title">Обратная связь</h3>
+        <div class="feedback__cancel" data-role="feedback-cancel">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.82397 0.632195L8.99997 6.8082L15.144 0.664195C15.2797 0.519743 15.4432 0.404187 15.6246 0.324455C15.8061 0.244723 16.0018 0.202458 16.2 0.200195C16.6243 0.200195 17.0313 0.368766 17.3313 0.668824C17.6314 0.968883 17.8 1.37585 17.8 1.8002C17.8037 1.99636 17.7673 2.19121 17.693 2.37281C17.6187 2.5544 17.5081 2.71889 17.368 2.8562L11.144 9.0002L17.368 15.2242C17.6317 15.4822 17.7863 15.8315 17.8 16.2002C17.8 16.6245 17.6314 17.0315 17.3313 17.3316C17.0313 17.6316 16.6243 17.8002 16.2 17.8002C15.9961 17.8087 15.7926 17.7746 15.6026 17.7003C15.4125 17.6259 15.24 17.5128 15.096 17.3682L8.99997 11.1922L2.83997 17.3522C2.70478 17.4918 2.54327 17.6033 2.36477 17.6802C2.18627 17.7571 1.99431 17.7979 1.79997 17.8002C1.37562 17.8002 0.968655 17.6316 0.668596 17.3316C0.368538 17.0315 0.199967 16.6245 0.199967 16.2002C0.196237 16.004 0.232632 15.8092 0.306919 15.6276C0.381206 15.446 0.491819 15.2815 0.631967 15.1442L6.85597 9.0002L0.631967 2.7762C0.368263 2.51821 0.213631 2.16885 0.199967 1.8002C0.199967 1.37585 0.368538 0.968883 0.668596 0.668824C0.968655 0.368766 1.37562 0.200195 1.79997 0.200195C2.18397 0.204995 2.55197 0.360195 2.82397 0.632195Z"
+                      fill="#EAEAEA"/>
+            </svg>
+        </div>
+    </section>
+    <section class="feedback__content">
+        <p class="feedback__text">
+            Оставьте свои контакты и мы свяжемся с вами
+        </p>
+        <form class="form__wrapper feedback__form" action="#" method="dialog">
+            <input class="form__input feedback__input" type="text" name="name" id="feedback-name" placeholder="Ваше имя">
+            <input class="form__input feedback__input" type="email" name="email" id="feedback-email" placeholder="Ваша эл. почта">
+            <input class="form__input feedback__input" type="tel" name="tel" id="feedback-tel" placeholder="Ваш номер тел.">
+            <textarea class="form__textarea feedback__textarea" name="text" id="feedback-text" placeholder="Сообщение"></textarea>
+            <button class="form__btn feedback__sender" type="submit">Отправить</button>
+        </form>
+    </section>
+</dialog>
+
 <SCRIPT src="./script/jquery-3.6.4.min.js"></SCRIPT>
 <SCRIPT src="./script/script.js"></SCRIPT>
 </BODY>
 
-</HTML>
+</html>
