@@ -1,91 +1,31 @@
 $(function () {
-    let currentSlideIndex = 0;
-    let timeout;
-    function move(newIndex, $group, buttonArray, $slides) {
-        let animateLeft, slideLeft;
-
-        advance($group, buttonArray, $slides);
-
-        if ($group.is(':animated') || currentSlideIndex === newIndex) {
-            return;
-        }
-
-        buttonArray[currentSlideIndex].removeClass('active');
-        buttonArray[newIndex].addClass('active');
-
-        if (newIndex > currentSlideIndex) {
-            slideLeft = '100%';
-            animateLeft = '-100%';
-        } else {
-            slideLeft = '-100%';
-            animateLeft = '100%';
-        }
-
-        $slides.eq(newIndex).css( {left: slideLeft, display: 'block'} );
-
-        $group.animate( {left: animateLeft}, function() {
-            $slides.eq(currentSlideIndex).css( {display: 'none'} );
-            $slides.eq(newIndex).css( {left: 0} );
-            $group.css( {left: 0} );
-            currentSlideIndex = newIndex;
-        });
-    }
-
-    function advance($group, buttonArray, $slides) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            if (currentSlideIndex < ($slides.length - 1)) {
-                move(currentSlideIndex + 1, $group, buttonArray, $slides);
-            } else {
-                move(0, $group, buttonArray, $slides);
-            }
-        }, 2000);
-    }
-
     function addSlider(element, pos) {
         const slider = [
             '<div class="slider" data-role="slider">',
-                '<div class="slide__viewer" data-role="slide-viewer">',
-                    '<div class="slide__group" data-role="slide-group">',
-                        '<div class="slide slide-1" data-role="slide">',
-                            '<img src="./images/slides/slide-1.jpg" alt=""/>',
-                        '</div>',
-                        '<div class="slide slide-2" data-role="slide">',
-                            '<img src="./images/slides/slide-2.jpg" alt=""/>',
-                        '</div>',
-                        '<div class="slide slide-3" data-role="slide">',
-                            '<img src="./images/slides/slide-3.jpg" alt=""/>',
-                        '</div>',
-                        '<div class="slide slide-4" data-role="slide">',
-                            '<img src="./images/slides/slide-4.jpg" alt=""/>',
-                        '</div>',
-                    '</div>',
-                '</div>',
-                '<div class="slide__buttons" data-role="slide-buttons"></div>',
+            '<div class="slide__viewer" data-role="slide-viewer">',
+            '<div class="slide__group" data-role="slide-group">',
+            '<div class="slide slide-1" data-role="slide">',
+            '<img src="/LibraryWebsite/images/slides/slide-1.jpg" alt=""/>',
+            '</div>',
+            '<div class="slide slide-2" data-role="slide">',
+            '<img src="/LibraryWebsite/images/slides/slide-2.jpg" alt=""/>',
+            '</div>',
+            '<div class="slide slide-3" data-role="slide">',
+            '<img src="/LibraryWebsite/images/slides/slide-3.jpg" alt=""/>',
+            '</div>',
+            '<div class="slide slide-4" data-role="slide">',
+            '<img src="/LibraryWebsite/images/slides/slide-4.jpg" alt=""/>',
+            '</div>',
+            '</div>',
+            '</div>',
+            '<div class="slide__buttons" data-role="slide-buttons"></div>',
             '</div>'
         ].join('');
 
         let prependSliderNode = element.children().eq(pos);
         prependSliderNode.after(slider);
 
-        let $slider   = $("[data-role='slider']");
-        let $group  = $slider.find("[data-role='slide-group']");
-        let $slides = $slider.find("[data-role='slide']");
-        let buttonArray  = [];
-        console.log($slides);
-
-        $.each($slides, function(index) {
-            let $button = $('<button type="button" class="slider__btn">&bull;</button>');
-            if (index === currentSlideIndex) {
-                $button.addClass('active');
-            }
-            $button.on('click', function() {
-                move(index, $group, buttonArray, $slides);
-            }).appendTo('.slide__buttons');
-            buttonArray.push($button);
-        });
-
-        advance($group, buttonArray, $slides);
+        $("[data-role='slider']").createSlider(2000);
     }
 
     function insertBook(element, data) {
@@ -119,43 +59,51 @@ $(function () {
         }
     }
 
-    // Button animation
-    $("[data-role='burger-btn']").on('click', function () {
+    function loadContent(link) {
+        return new Promise((resolve) => {
+                $('.wrapper__nav-list').removeClass('wrapper__nav-list--active');
+                $("[data-role='burger-btn']").removeClass('nav__btn--active');
+
+                $.post(link,
+                    function (data) {
+                        infoContainer.html(data);
+                        let infoJSON = $('#info [data-theme="book"][data-json]');
+                        if (infoJSON.length) {
+                            $.post("/LibraryWebsite/data/books.json",
+                                function (books) {
+                                    insertBook(infoJSON, books);
+                                    resolve();
+                                })
+                        }
+                        resolve();
+                    }
+                );
+            }
+        )
+            ;
+    }
+
+// Button animation
+    $('[data-role="burger-btn"]').on('click', function () {
         $('.wrapper__nav-list').toggleClass('wrapper__nav-list--active');
         $(this).toggleClass('nav__btn--active');
     });
 
-    // Navigation link
+// Navigation link
     let infoContainer = $('#info');
-    $('[data-role="nav"]').on('click', (e) => {
+    $('[data-role="nav"]').on('click', async (e) => {
         e.preventDefault();
-        $('.wrapper__nav-list').removeClass('wrapper__nav-list--active');
-        $("[data-role='burger-btn']").removeClass('nav__btn--active');
-
-        let link = e.target;
-        while (link.tagName !== 'A') {
-            link = link.parentElement;
+        let linkNode = e.target;
+        while (linkNode.tagName !== 'A') {
+            linkNode = linkNode.parentElement;
         }
-
-        $.post(link.href,
-            function (data) {
-                if (!data) {
-                    infoContainer.html(`<H3 class="system-information">Файл "${e.target.textContent}" находится в разработке`);
-                } else {
-                    infoContainer.html(data);
-                    let infoJSON = $('#info [data-theme="book"][data-json]');
-                    if (infoJSON.length) {
-                        $.post("../data/books.json",
-                            function (books) {
-                                insertBook(infoJSON, books);
-                            })
-                    }
-                }
-            }
-        );
+        loadContent(linkNode.href)
+            .then(() => history.pushState({
+                page: linkNode.href
+            }, linkNode.innerText));
     });
 
-    // Dialog feedback
+// Dialog feedback
     document.querySelector("[data-role=feedback-open]")
         .addEventListener('click', (e) => {
             e.preventDefault();
@@ -165,6 +113,12 @@ $(function () {
         .addEventListener('click', (e) => {
             document.querySelector("[data-role=dialog-feedback]").close();
         });
+
+    window.onpopstate = (e) => {
+        if (e.state && e.state.page) {
+            loadContent(e.state.page);
+        }
+    };
 
     $('#first-page').trigger('click');
 })

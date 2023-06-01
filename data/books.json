@@ -15,7 +15,7 @@
       "access_date": "26 мая 2016",
       "reader": "Иван Иванов",
       "copyright_holder": "AB Publishing",
-      "img": "./images/books/think_and_get_rich.jpg"
+      "img": "/LibraryWebsite/images/books/think_and_get_rich.jpg"
     },
     "2": {
       "title": "Думай и богатей",
@@ -32,7 +32,7 @@
       "access_date": "26 мая 2016",
       "reader": "Иван Иванов",
       "copyright_holder": "AB Publishing",
-      "img": "./images/books/think_and_get_rich.jpg"
+      "img": "/LibraryWebsite/images/books/think_and_get_rich.jpg"
     },
     "3": {
       "title": "Думай и богатей",
@@ -49,7 +49,7 @@
       "access_date": "26 мая 2016",
       "reader": "Иван Иванов",
       "copyright_holder": "AB Publishing",
-      "img": "./images/books/think_and_get_rich.jpg"
+      "img": "/LibraryWebsite/images/books/think_and_get_rich.jpg"
     },
     "4": {
       "title": "Думай и богатей",
@@ -66,7 +66,7 @@
       "access_date": "26 мая 2016",
       "reader": "Иван Иванов",
       "copyright_holder": "AB Publishing",
-      "img": "./images/books/think_and_get_rich.jpg"
+      "img": "/LibraryWebsite/images/books/think_and_get_rich.jpg"
     },
     "5": {
       "title": "Думай и богатей",
@@ -83,7 +83,7 @@
       "access_date": "26 мая 2016",
       "reader": "Иван Иванов",
       "copyright_holder": "AB Publishing",
-      "img": "./images/books/think_and_get_rich.jpg"
+      "img": "/LibraryWebsite/images/books/think_and_get_rich.jpg"
     },
     "6": {
       "title": "Думай и богатей",
@@ -100,7 +100,7 @@
       "access_date": "26 мая 2016",
       "reader": "Иван Иванов",
       "copyright_holder": "AB Publishing",
-      "img": "./images/books/think_and_get_rich.jpg"
+      "img": "/LibraryWebsite/images/books/think_and_get_rich.jpg"
     },
     "7": {
       "title": "Думай и богатей",
@@ -117,7 +117,7 @@
       "access_date": "26 мая 2016",
       "reader": "Иван Иванов",
       "copyright_holder": "AB Publishing",
-      "img": "./images/books/think_and_get_rich.jpg"
+      "img": "/LibraryWebsite/images/books/think_and_get_rich.jpg"
     },
     "8": {
       "title": "Думай и богатей",
@@ -134,7 +134,7 @@
       "access_date": "26 мая 2016",
       "reader": "Иван Иванов",
       "copyright_holder": "AB Publishing",
-      "img": "./images/books/think_and_get_rich.jpg"
+      "img": "/LibraryWebsite/images/books/think_and_get_rich.jpg"
     }
   }
 }

@@ -1,14 +1,6 @@
-let infoContainer = $('#info');
-$('[data-role="content-nav"]').on('click', (e) => {
-    e.preventDefault();
+$("[data-role='slider']").createSlider(2000);
 
-    $.post(e.target.href,
-        function (data) {
-            if (!data) {
-                infoContainer.html(`<H3 class="system-information">Файл "${e.target.textContent}" находится в разработке`);
-            } else {
-                infoContainer.html(data);
-            }
-        }
-    );
-});
+$("[data-role='tech-support-link']").on('click', function (e) {
+    e.preventDefault();
+    $("[data-link='tech-support']").trigger('click');
+})

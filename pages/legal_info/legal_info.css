@@ -9,6 +9,7 @@
 
 .legal__content A {
     color: #3D1EB5;
+    cursor: pointer;
 }
 
 .legal__content,
